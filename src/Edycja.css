@@ -1,0 +1,27 @@
+
+.EdycjaLekcji_input-grupa{
+    width: 100%;
+}
+
+.EdycjaLekcji_button{
+    background: linear-gradient(gray, lightgray);
+    border: none;
+    margin: 7px auto;
+    width: 70px;
+}
+
+.EdycjaLekcji_input-grupa:last-child{
+    display: flex;
+    justify-content: space-evenly;
+}
+.alert{
+
+    display: none;
+    background-color: red;
+    color: white;
+    padding: 30px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 9px;
+    box-shadow: 5px 5px 15px black;
+}
