@@ -132,7 +132,7 @@ class powitanie extends Component{
                 const element2 = this.state.Lekcje[i];
                 start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
                 end2 = start2 + 2700;
-                if((start>start2 && start<end2) || (end>start2 && end<end2)){
+                if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
                     naSobie = true;
                     break;
                 }
@@ -161,7 +161,7 @@ class powitanie extends Component{
               const element2 = this.state.Lekcje[i];
               start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
               end2 = start2 + 2700;
-              if((start>start2 && start<end2) || (end>start2 && end<end2)){
+              if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
                   naSobie = true;
                   break;
               }
@@ -190,7 +190,7 @@ class powitanie extends Component{
               const element2 = this.state.Lekcje[i];
               start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
               end2 = start2 + 2700;
-              if((start>start2 && start<end2) || (end>start2 && end<end2)){
+              if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
                   naSobie = true;
                   break;
               }
@@ -219,7 +219,7 @@ class powitanie extends Component{
               const element2 = this.state.Lekcje[i];
               start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
               end2 = start2 + 2700;
-              if((start>start2 && start<end2) || (end>start2 && end<end2)){
+              if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
                   naSobie = true;
                   break;
               }
@@ -248,7 +248,7 @@ class powitanie extends Component{
                 const element2 = this.state.Lekcje[i];
                 start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
                 end2 = start2 + 2700;
-                if((start>start2 && start<end2) || (end>start2 && end<end2)){
+                if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
                     naSobie = true;
                     break;
                 }
@@ -277,7 +277,7 @@ class powitanie extends Component{
                 const element2 = this.state.Lekcje[i];
                 start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
                 end2 = start2 + 2700;
-                if((start>start2 && start<end2) || (end>start2 && end<end2)){
+                if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
                     naSobie = true;
                     break;
                 }
