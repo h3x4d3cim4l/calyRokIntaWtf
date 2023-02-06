@@ -16,12 +16,6 @@ class powitanie extends Component{
             sekunda: new Date().getSeconds()
         },
         Lekcje:[
-        //     {id:0, name:"Lekcja 1",czasG: 7, czasM:45},
-        //     {id:1, name:"Lekcja 2",czasG: 8, czasM:35},
-        //     {id:2, name:"Lekcja 3",czasG: 9, czasM:25},
-        //     {id:3, name:"Lekcja 4",czasG: 10, czasM:15},
-        //     {id:4, name:"Lekcja 5",czasG: 11, czasM:15},
-        //     {id:5, name:"Lekcja 6",czasG: 12, czasM:15}
          ],
         edytowaneLekcje:{
             ktora: x,
@@ -122,180 +116,180 @@ class powitanie extends Component{
 
  render(){
 
-    let start, end, start2, end2;
-    const LekcjePon = this.state.Lekcje.map(element =>{
-        if(element.dzien==="pon"){
-            start= godzinaMinutadoSekund(element.czasG, element.czasM);
-            end = start + 2700;
-            let naSobie = false;
-            for (let i = 0; i < this.state.Lekcje.length; i++) {
-                const element2 = this.state.Lekcje[i];
-                start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
-                end2 = start2 + 2700;
-                if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
-                    naSobie = true;
-                    break;
-                }
-            }
-            return <Odliczanie 
-                key={element.id} 
-                id={element.id}
-                ile={element.ktora} 
-                obecnyCzas={this.state.Czas}
-                name={element.name} 
-                czasG={element.czasG} 
-                czasM={element.czasM}
-                dzien={"Poniedziałek"}
-                naSobie={naSobie}
-                Usun={id=>this.usuwanieLekcji(id)} 
-                edytujLekcje={id=>this.edycjaLekcji(id)}/>     
-        }
-    })
+    // let start, end, start2, end2;
+    // const LekcjePon = this.state.Lekcje.map(element =>{
+    //     if(element.dzien==="pon"){
+    //         start= godzinaMinutadoSekund(element.czasG, element.czasM);
+    //         end = start + 2700;
+    //         let naSobie = false;
+    //         for (let i = 0; i < this.state.Lekcje.length; i++) {
+    //             const element2 = this.state.Lekcje[i];
+    //             start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
+    //             end2 = start2 + 2700;
+    //             if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
+    //                 naSobie = true;
+    //                 break;
+    //             }
+    //         }
+    //         return <Odliczanie 
+    //             key={element.id} 
+    //             id={element.id}
+    //             ile={element.ktora} 
+    //             obecnyCzas={this.state.Czas}
+    //             name={element.name} 
+    //             czasG={element.czasG} 
+    //             czasM={element.czasM}
+    //             dzien={"Poniedziałek"}
+    //             naSobie={naSobie}
+    //             Usun={id=>this.usuwanieLekcji(id)} 
+    //             edytujLekcje={id=>this.edycjaLekcji(id)}/>     
+    //     }
+    // })
 
-    const LekcjeWto = this.state.Lekcje.map(element => {
-        if(element.dzien === "wto") {
-          start= godzinaMinutadoSekund(element.czasG, element.czasM);
-          end = start + 2700;
-          let naSobie = false;
-          for (let i = 0; i < this.state.Lekcje.length; i++) {
-              const element2 = this.state.Lekcje[i];
-              start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
-              end2 = start2 + 2700;
-              if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
-                  naSobie = true;
-                  break;
-              }
-          }
-          return <Odliczanie 
-            key={element.id} 
-            id={element.id}
-            ile={element.ktora} 
-            obecnyCzas={this.state.Czas}
-            name={element.name} 
-            czasG={element.czasG} 
-            czasM={element.czasM}
-            dzien={"Wtorek"}
-            naSobie={naSobie}
-            Usun={id=>this.usuwanieLekcji(id)} 
-            edytujLekcje={id=>this.edycjaLekcji(id)}/>
-        }
-      });
+    // const LekcjeWto = this.state.Lekcje.map(element => {
+    //     if(element.dzien === "wto") {
+    //       start= godzinaMinutadoSekund(element.czasG, element.czasM);
+    //       end = start + 2700;
+    //       let naSobie = false;
+    //       for (let i = 0; i < this.state.Lekcje.length; i++) {
+    //           const element2 = this.state.Lekcje[i];
+    //           start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
+    //           end2 = start2 + 2700;
+    //           if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
+    //               naSobie = true;
+    //               break;
+    //           }
+    //       }
+    //       return <Odliczanie 
+    //         key={element.id} 
+    //         id={element.id}
+    //         ile={element.ktora} 
+    //         obecnyCzas={this.state.Czas}
+    //         name={element.name} 
+    //         czasG={element.czasG} 
+    //         czasM={element.czasM}
+    //         dzien={"Wtorek"}
+    //         naSobie={naSobie}
+    //         Usun={id=>this.usuwanieLekcji(id)} 
+    //         edytujLekcje={id=>this.edycjaLekcji(id)}/>
+    //     }
+    //   });
 
-      const LekcjeSro = this.state.Lekcje.map(element => {
-        if(element.dzien === "sro") {
-          start= godzinaMinutadoSekund(element.czasG, element.czasM);
-          end = start + 2700;
-          let naSobie = false;
-          for (let i = 0; i < this.state.Lekcje.length; i++) {
-              const element2 = this.state.Lekcje[i];
-              start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
-              end2 = start2 + 2700;
-              if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
-                  naSobie = true;
-                  break;
-              }
-          }
-          return <Odliczanie 
-            key={element.id} 
-            id={element.id}
-            ile={element.ktora} 
-            obecnyCzas={this.state.Czas}
-            name={element.name} 
-            czasG={element.czasG} 
-            czasM={element.czasM}
-            dzien={"Środa"}
-            naSobie={naSobie}
-            Usun={id=>this.usuwanieLekcji(id)} 
-            edytujLekcje={id=>this.edycjaLekcji(id)}/>
-        }
-      });
+    //   const LekcjeSro = this.state.Lekcje.map(element => {
+    //     if(element.dzien === "sro") {
+    //       start= godzinaMinutadoSekund(element.czasG, element.czasM);
+    //       end = start + 2700;
+    //       let naSobie = false;
+    //       for (let i = 0; i < this.state.Lekcje.length; i++) {
+    //           const element2 = this.state.Lekcje[i];
+    //           start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
+    //           end2 = start2 + 2700;
+    //           if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
+    //               naSobie = true;
+    //               break;
+    //           }
+    //       }
+    //       return <Odliczanie 
+    //         key={element.id} 
+    //         id={element.id}
+    //         ile={element.ktora} 
+    //         obecnyCzas={this.state.Czas}
+    //         name={element.name} 
+    //         czasG={element.czasG} 
+    //         czasM={element.czasM}
+    //         dzien={"Środa"}
+    //         naSobie={naSobie}
+    //         Usun={id=>this.usuwanieLekcji(id)} 
+    //         edytujLekcje={id=>this.edycjaLekcji(id)}/>
+    //     }
+    //   });
       
-      const LekcjeCzw = this.state.Lekcje.map(element => {
-        if(element.dzien === "czw") {
-          start= godzinaMinutadoSekund(element.czasG, element.czasM);
-          end = start + 2700;
-          let naSobie = false;
-          for (let i = 0; i < this.state.Lekcje.length; i++) {
-              const element2 = this.state.Lekcje[i];
-              start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
-              end2 = start2 + 2700;
-              if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
-                  naSobie = true;
-                  break;
-              }
-          }
-          return <Odliczanie 
-            key={element.id} 
-            id={element.id}
-            ile={element.ktora} 
-            obecnyCzas={this.state.Czas}
-            name={element.name} 
-            czasG={element.czasG} 
-            czasM={element.czasM}
-            dzien={"Czwartek"}
-            naSobie={naSobie}
-            Usun={id=>this.usuwanieLekcji(id)} 
-            edytujLekcje={id=>this.edycjaLekcji(id)}/>
-        }
-    });  
+    //   const LekcjeCzw = this.state.Lekcje.map(element => {
+    //     if(element.dzien === "czw") {
+    //       start= godzinaMinutadoSekund(element.czasG, element.czasM);
+    //       end = start + 2700;
+    //       let naSobie = false;
+    //       for (let i = 0; i < this.state.Lekcje.length; i++) {
+    //           const element2 = this.state.Lekcje[i];
+    //           start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
+    //           end2 = start2 + 2700;
+    //           if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
+    //               naSobie = true;
+    //               break;
+    //           }
+    //       }
+    //       return <Odliczanie 
+    //         key={element.id} 
+    //         id={element.id}
+    //         ile={element.ktora} 
+    //         obecnyCzas={this.state.Czas}
+    //         name={element.name} 
+    //         czasG={element.czasG} 
+    //         czasM={element.czasM}
+    //         dzien={"Czwartek"}
+    //         naSobie={naSobie}
+    //         Usun={id=>this.usuwanieLekcji(id)} 
+    //         edytujLekcje={id=>this.edycjaLekcji(id)}/>
+    //     }
+    // });  
 
-    const LekcjePia= this.state.Lekcje.map(element =>{
-        if(element.dzien==="pia"){
-            start= godzinaMinutadoSekund(element.czasG, element.czasM);
-            end = start + 2700;
-            let naSobie = false;
-            for (let i = 0; i < this.state.Lekcje.length; i++) {
-                const element2 = this.state.Lekcje[i];
-                start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
-                end2 = start2 + 2700;
-                if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
-                    naSobie = true;
-                    break;
-                }
-            }
-            return <Odliczanie 
-            key={element.id} 
-            id={element.id}
-            ile={element.ktora} 
-            obecnyCzas={this.state.Czas}
-            name={element.name} 
-            czasG={element.czasG} 
-            czasM={element.czasM}
-            dzien={"Piątek"}
-            naSobie={naSobie}
-            Usun={id=>this.usuwanieLekcji(id)} 
-            edytujLekcje={id=>this.edycjaLekcji(id)}/>
-        }
-    })
+    // const LekcjePia= this.state.Lekcje.map(element =>{
+    //     if(element.dzien==="pia"){
+    //         start= godzinaMinutadoSekund(element.czasG, element.czasM);
+    //         end = start + 2700;
+    //         let naSobie = false;
+    //         for (let i = 0; i < this.state.Lekcje.length; i++) {
+    //             const element2 = this.state.Lekcje[i];
+    //             start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
+    //             end2 = start2 + 2700;
+    //             if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
+    //                 naSobie = true;
+    //                 break;
+    //             }
+    //         }
+    //         return <Odliczanie 
+    //         key={element.id} 
+    //         id={element.id}
+    //         ile={element.ktora} 
+    //         obecnyCzas={this.state.Czas}
+    //         name={element.name} 
+    //         czasG={element.czasG} 
+    //         czasM={element.czasM}
+    //         dzien={"Piątek"}
+    //         naSobie={naSobie}
+    //         Usun={id=>this.usuwanieLekcji(id)} 
+    //         edytujLekcje={id=>this.edycjaLekcji(id)}/>
+    //     }
+    // })
 
-    const LekcjeNic= this.state.Lekcje.map(element =>{
-        if(element.dzien==="nic"){
-            start= godzinaMinutadoSekund(element.czasG, element.czasM);
-            end = start + 2700;
-            let naSobie = false;
-            for (let i = 0; i < this.state.Lekcje.length; i++) {
-                const element2 = this.state.Lekcje[i];
-                start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
-                end2 = start2 + 2700;
-                if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
-                    naSobie = true;
-                    break;
-                }
-            }
-            return <Odliczanie 
-            key={element.id} 
-            id={element.id}
-            ile={element.ktora} 
-            obecnyCzas={this.state.Czas}
-            name={element.name} 
-            czasG={element.czasG} 
-            czasM={element.czasM}
-            dzien={""}
-            naSobie={naSobie}
-            Usun={id=>this.usuwanieLekcji(id)} 
-            edytujLekcje={id=>this.edycjaLekcji(id)}/>
-        }
-    })
+    // const LekcjeNic= this.state.Lekcje.map(element =>{
+    //     if(element.dzien==="nic"){
+    //         start= godzinaMinutadoSekund(element.czasG, element.czasM);
+    //         end = start + 2700;
+    //         let naSobie = false;
+    //         for (let i = 0; i < this.state.Lekcje.length; i++) {
+    //             const element2 = this.state.Lekcje[i];
+    //             start2= godzinaMinutadoSekund(element2.czasG, element2.czasM);
+    //             end2 = start2 + 2700;
+    //             if(((start>start2 && start<end2) || (end>start2 && end<end2)) && element2.dzien == element.dzien){
+    //                 naSobie = true;
+    //                 break;
+    //             }
+    //         }
+    //         return <Odliczanie 
+    //         key={element.id} 
+    //         id={element.id}
+    //         ile={element.ktora} 
+    //         obecnyCzas={this.state.Czas}
+    //         name={element.name} 
+    //         czasG={element.czasG} 
+    //         czasM={element.czasM}
+    //         dzien={""}
+    //         naSobie={naSobie}
+    //         Usun={id=>this.usuwanieLekcji(id)} 
+    //         edytujLekcje={id=>this.edycjaLekcji(id)}/>
+    //     }
+    // })
     return(
         <div className='wrapper'>
             <div className='planLekcji'>
